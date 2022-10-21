@@ -1,4 +1,5 @@
 # img-to-ascii
+Just open index.html and play around.
 
 Supports any kind of image format. Also live webcam feed.
 
