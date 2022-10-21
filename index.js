@@ -83,7 +83,7 @@ const loadFile = (event) => {
     }
 };
 
-var video = document.getElementById("webcam");
+const video = document.getElementById("webcam");
 
 const asciiVideo = () => {
     clearAsciiVideo();
@@ -135,7 +135,7 @@ const asciiVideo = () => {
 };
 
 var startDrawingASCIIVideo = function () {
-    var fps = 30;
+    const fps = 30;
     setInterval(asciiVideo, Math.round(1000 / fps));
 }
 
