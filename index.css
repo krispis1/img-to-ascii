@@ -1,0 +1,22 @@
+@font-face {
+    font-family: font;
+    src: url('./UbuntuMono-R.ttf') format('truetype');
+    font-display: swap
+}
+
+html {
+    background: #252526;
+    font-family: font;
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+label:hover {
+    color: rgb(145, 145, 145);
+}
