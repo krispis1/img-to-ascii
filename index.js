@@ -7,8 +7,13 @@ const clearAscii = () => {
     p.innerHTML = "";
 }
 
+const clearAsciiVideo = () => {
+    asciiImage = "";
+    const p = document.getElementById('asciiVideo');
+    p.innerHTML = "";
+}
+
 const clearAndReload = () => {
-    clearAscii();
     location.reload();
 }
 
@@ -79,7 +84,7 @@ const loadFile = (event) => {
 var video = document.getElementById("webcam");
 
 const asciiVideo = () => {
-    clearAscii();
+    clearAsciiVideo();
 
     const canvas = document.getElementById('output');
     const widthInput = document.getElementById('width');
@@ -118,7 +123,7 @@ const asciiVideo = () => {
         }
 
         if ((i + 4) >= data.length) {
-            const p = document.getElementById('ascii');
+            const p = document.getElementById('asciiVideo');
             p.innerHTML = asciiImage;
         }
     }
