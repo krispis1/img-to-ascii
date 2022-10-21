@@ -6,8 +6,10 @@
         <input type="file"  accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
         <input type="text" id="width" placeholder="Width in px" style="text-align: center;">
         <p><label for="file" style="cursor: pointer; font-size: 16pt;">Upload Image</label></p>
+        <button onclick="startVideo()">webcam</button>
         <button onclick="clearAndReload()">Clear</button>
         <canvas id="output" style="display: none;"></canvas>	
         <p id="ascii" style="white-space: pre-line"></p>
+        <video autoplay="true" id="webcam" style="transform: scaleX(-1); display: none;"></video>
     </div>
 </main>
