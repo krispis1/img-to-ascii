@@ -24,7 +24,6 @@ const loadFile = (event) => {
     const widthInput = document.getElementById('width');
     const image = new Image();
     image.src = URL.createObjectURL(event.target.files[0]);
-    const context = canvas.getContext("2d", { willReadFrequently: true });
     image.onload = () => {
 
         var asciiWidth;
@@ -35,6 +34,9 @@ const loadFile = (event) => {
         }
         const asciiHeight = Math.floor((asciiWidth * 100 / image.width) * image.height / 100 * 0.45);
 
+        const context = canvas.getContext("2d", { willReadFrequently: true });
+        context.canvas.width = asciiWidth;
+        context.canvas.height = asciiHeight;
         context.drawImage(image, 0, 0, asciiWidth, asciiHeight);
 
         canvas.toBlob(
@@ -88,7 +90,6 @@ const asciiVideo = () => {
 
     const canvas = document.getElementById('output');
     const widthInput = document.getElementById('width');
-    const context = canvas.getContext("2d", { willReadFrequently: true });
     var asciiWidth;
     if (widthInput.value != "" && !isNaN(widthInput.value)) {
         asciiWidth = Math.floor(parseInt(widthInput.value, 10));
@@ -97,6 +98,9 @@ const asciiVideo = () => {
     }
     const asciiHeight = Math.floor((asciiWidth * 100 / video.videoWidth) * video.videoHeight / 100 * 0.45);
 
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    context.canvas.width = asciiWidth;
+    context.canvas.height = asciiHeight;
     context.drawImage(video, 0, 0, asciiWidth, asciiHeight);
 
     const imgData = context.getImageData(0, 0, asciiWidth, asciiHeight);
