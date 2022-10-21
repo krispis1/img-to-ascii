@@ -10,6 +10,17 @@ html {
     color: #fff;
 }
 
+button {
+    margin: 5px 0 5px 0;
+    font-family: font;
+    font-size: 16pt;
+}
+
+input {
+    font-family: font;
+    font-size: 16pt;
+}
+
 .wrapper {
     display: flex;
     align-items: center;

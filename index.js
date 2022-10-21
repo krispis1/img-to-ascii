@@ -135,7 +135,7 @@ const asciiVideo = () => {
 };
 
 var startDrawingASCIIVideo = function () {
-    const fps = 30;
+    const fps = 60;
     setInterval(asciiVideo, Math.round(1000 / fps));
 }
 
