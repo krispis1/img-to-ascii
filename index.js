@@ -43,7 +43,7 @@ const loadFile = (event) => {
                 const green = data[i + 1];
                 const blue = data[i + 2];
 
-                const brightness = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+                const brightness = Math.sqrt(0.241 * red * red + 0.691 * green * green + 0.068 * blue * blue);
                 const brightnessPercent = brightness * 100 / 255;
                 const asciiCalc = density.length * brightnessPercent / 100;
                 const asciiMatch = parseInt(asciiCalc, 10);
@@ -96,7 +96,7 @@ const asciiVideo = () => {
         const green = data[i + 1];
         const blue = data[i + 2];
 
-        const brightness = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+        const brightness = Math.sqrt(0.241 * red * red + 0.691 * green * green + 0.068 * blue * blue);
         const brightnessPercent = brightness * 100 / 255;
         const asciiCalc = density.length * brightnessPercent / 100;
         const asciiMatch = parseInt(asciiCalc, 10);
