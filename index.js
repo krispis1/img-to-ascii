@@ -49,7 +49,7 @@ const loadFile = (event) => {
                 const asciiMatch = parseInt(asciiCalc, 10);
 
                 if (asciiMatch != 0) {
-                    asciiImage += density[asciiMatch - 1];
+                    asciiImage += density[asciiMatch-1];
                 } else {
                     asciiImage += density[0];
                 }
@@ -102,7 +102,7 @@ const asciiVideo = () => {
         const asciiMatch = parseInt(asciiCalc, 10);
 
         if (asciiMatch != 0) {
-            asciiVideo += density[asciiMatch - 1];
+            asciiVideo += density[asciiMatch-1];
         } else {
             asciiVideo += density[0];
         }
