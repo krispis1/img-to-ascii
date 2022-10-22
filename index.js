@@ -49,9 +49,9 @@ const loadFile = (event) => {
                 const asciiMatch = parseInt(asciiCalc, 10);
 
                 if (asciiMatch != 0) {
-                    asciiImage += density[asciiMatch-1];
+                    asciiImage += `<span style='color: rgb(${red},${green},${blue});'>${density[asciiMatch-1]}</span>`;
                 } else {
-                    asciiImage += density[0];
+                    asciiImage += `<span style='color: rgb(${red},${green},${blue});'>${density[0]}</span>`;
                 }
 
                 if ((i + 4) % (asciiWidth * 4) == 0) {
@@ -102,9 +102,17 @@ const asciiVideo = () => {
         const asciiMatch = parseInt(asciiCalc, 10);
 
         if (asciiMatch != 0) {
-            asciiVideo += density[asciiMatch-1];
+            if (asciiWidth > 90) {
+                asciiVideo += density[asciiMatch-1];
+            } else {
+                asciiVideo += `<span style='color: rgb(${red},${green},${blue});'>${density[asciiMatch-1]}</span>`;
+            }
         } else {
-            asciiVideo += density[0];
+            if (asciiWidth > 90) {
+                asciiVideo += density[0];
+            } else {
+                asciiVideo += `<span style='color: rgb(${red},${green},${blue});'>${density[0]}</span>`;
+            }
         }
 
         if ((i + 4) % (asciiWidth * 4) == 0) {
@@ -126,7 +134,7 @@ var startDrawingASCIIVideo = function () {
 
 const startVideo = () => {
     if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: {width: 1280} })
+        navigator.mediaDevices.getUserMedia({ video: { width: 1280 } })
             .then(function (stream) {
                 video.srcObject = stream;
                 video.onloadedmetadata = () => {
