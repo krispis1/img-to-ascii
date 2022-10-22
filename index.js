@@ -1,4 +1,4 @@
-const density = "@QB#NgWM8RDHdOKq9$6khEPXwmeZaoS2yjufF]}{tx1zv7lciL/\\|?*>r^;:_\"~,'.-`";
+const density = "`-.',~\"_:;^r>*?|\\/Licl7vz1xt{}]Ffujy2SoaZemwXPEhk6$9qKOdHDR8MWgN#BQ@";
 var asciiImage = "";
 
 const clearAscii = () => {
@@ -57,7 +57,7 @@ const loadFile = (event) => {
                 const green = data[i + 1];
                 const blue = data[i + 2];
 
-                const brightness = parseInt(0.2126 * red + 0.7152 * green + 0.0722 * blue, 10);
+                const brightness = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
                 const brightnessPercent = brightness * 100 / 255;
                 const asciiCalc = density.length * brightnessPercent / 100;
                 const asciiMatch = parseInt(asciiCalc, 10);
@@ -111,7 +111,7 @@ const asciiVideo = () => {
         const green = data[i + 1];
         const blue = data[i + 2];
 
-        const brightness = parseInt(0.2126 * red + 0.7152 * green + 0.0722 * blue, 10);
+        const brightness = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
         const brightnessPercent = brightness * 100 / 255;
         const asciiCalc = density.length * brightnessPercent / 100;
         const asciiMatch = parseInt(asciiCalc, 10);
