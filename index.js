@@ -1,26 +1,12 @@
 const density = "`-.',~\"_:;^r>*?|\\/Licl7vz1xt{}]Ffujy2SoaZemwXPEhk6$9qKOdHDR8MWgN#BQ@";
-var asciiImage = "";
-
-const clearAscii = () => {
-    asciiImage = "";
-    const p = document.getElementById('ascii');
-    p.innerHTML = "";
-}
-
-const clearAsciiVideo = () => {
-    asciiImage = "";
-    const p = document.getElementById('asciiVideo');
-    p.innerHTML = "";
-}
 
 const clearAndReload = () => {
     location.reload();
 }
 
 const loadFile = (event) => {
-    clearAscii();
-
-    const canvas = document.getElementById('output');
+    var asciiImage = "";
+    const canvas = document.getElementById('outputImage');
     const widthInput = document.getElementById('width');
     const image = new Image();
     image.src = URL.createObjectURL(event.target.files[0]);
@@ -86,9 +72,8 @@ const loadFile = (event) => {
 const video = document.getElementById("webcam");
 
 const asciiVideo = () => {
-    clearAsciiVideo();
-
-    const canvas = document.getElementById('output');
+    var asciiVideo = "";
+    const canvas = document.getElementById('outputVideo');
     const widthInput = document.getElementById('width');
     var asciiWidth;
     if (widthInput.value != "" && !isNaN(widthInput.value)) {
@@ -117,18 +102,18 @@ const asciiVideo = () => {
         const asciiMatch = parseInt(asciiCalc, 10);
 
         if (asciiMatch != 0) {
-            asciiImage += density[asciiMatch - 1];
+            asciiVideo += density[asciiMatch - 1];
         } else {
-            asciiImage += density[0];
+            asciiVideo += density[0];
         }
 
         if ((i + 4) % (asciiWidth * 4) == 0) {
-            asciiImage += "\n";
+            asciiVideo += "\n";
         }
 
         if ((i + 4) >= data.length) {
             const p = document.getElementById('asciiVideo');
-            p.innerHTML = asciiImage;
+            p.innerHTML = asciiVideo;
         }
     }
 
