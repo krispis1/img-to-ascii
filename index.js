@@ -126,11 +126,12 @@ var startDrawingASCIIVideo = function () {
 
 const startVideo = () => {
     if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({ video: {width: 1280} })
             .then(function (stream) {
                 video.srcObject = stream;
-                startDrawingASCIIVideo();
-                console.log("video started");
+                video.onloadedmetadata = () => {
+                    startDrawingASCIIVideo();
+                }
             })
             .catch(function (error) {
                 console.log(error);
